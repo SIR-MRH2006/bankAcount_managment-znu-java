@@ -1,4 +1,4 @@
- <h2> we several class in this project. </h2>
+ <h2> we have several class in this project. </h2>
  <h3> App :  </h3>
  <h5> main class </h5>
  <hr>
