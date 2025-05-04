@@ -1,18 +1,18 @@
-## Getting Started
+ <h2> we several class in this project. </h2>
+ <h3> App :  </h3>
+ <h5> main class </h5>
+ <hr>
+ <h3> bank :  </h3>
+ <h5> main class </h5>
+ <hr>
+ <h3> central bank / commerical bank / specialize bank  :  </h3>
+ <h5> absract class for grouping </h5>
+ <hr>
+ <h3> ITransaction / IMccountManagment :  </h3>
+ <h5> these are some interface for bank class </h5>
+ <hr>
+ <h3> userOfBank :  </h3>
+ <h5> main code are in this class like withdraw and deposite and so on... methods </h5>
+ <hr>
+ 
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
