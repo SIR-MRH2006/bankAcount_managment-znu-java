@@ -1,9 +1,16 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         MellatBank MB1 = new MellatBank("mb1");
+
+        HashMap<String, Integer> prices = new HashMap<>();
+        prices.put("1404/01/01", 90000);
+        prices.put("1404/01/02", 91000);
+        prices.put("1404/01/03", 92000);    
+        prices.put("1404/01/04", 93000);
 
         while (true) {
             System.out.println("-----------------------------------------");
@@ -13,7 +20,7 @@ public class App {
             int userFirstChoice = scanner.nextInt();
             switch (userFirstChoice) {
                 case 1:
-                    add_acount(MB1,scanner);
+                    add_acount(MB1,scanner);    
                     break;
                 case 2:
                     int user_index = find_index(scanner);
@@ -30,10 +37,10 @@ public class App {
                     case 4:
                     int user_index2 = find_index(scanner);
                     if(user_index2 != -1){
-                        show_info(user_index2);
+                        show_info(user_index2,prices);
                     }
                     break;
-                default:
+                default:    
                     continue;
             }
         }
@@ -120,8 +127,47 @@ public class App {
         user.deposite(amount);
     }
 
-    public static void show_info(int user_index2){
+    public static void show_info(int user_index2,HashMap<String, Integer> prices){
         UsersOfBank user = MellatBank.users[user_index2];
-        user.user_info();
+        while (true) {
+            System.err.println("in rial ot dollar ? (r/d)");
+            Scanner scanner = new Scanner(System.in);
+            String choice = scanner.nextLine();
+            if(choice.equals("r")){
+                user.user_info();
+                break;
+            }else if(choice.equals("d")){
+                String keyOfDate = "";
+                while (true) {
+                    System.out.println("please enter a date (yyyy/mm/dd) to check price : ");
+                    // print dates : 
+                    for(String date : prices.keySet()){
+                        System.out.println(date);
+                    }
+                    String date = scanner.nextLine();
+                    System.out.println(date);
+                    if(date.equals("1404/01/01")){
+                        keyOfDate = "1404/01/01";
+                    }else if(date.equals("1404/01/02")){
+                        keyOfDate = "1404/01/02";
+                    }else if(date.equals("1404/01/03")){
+                        keyOfDate = "1404/01/03";
+                    }else if(date.equals("1404/01/04")){
+                        keyOfDate = "1404/01/04";
+                    }else if(date.equals("0")){
+                        break;
+                    }
+                    if(keyOfDate.length() > 0){
+                        user.user_info_dollar(prices.get(keyOfDate));
+                        break;
+                    }
+                }
+            }else if(choice.equals("0")){
+                break;
+            }
+            else{
+                continue;
+            }
+        }
     }
 }

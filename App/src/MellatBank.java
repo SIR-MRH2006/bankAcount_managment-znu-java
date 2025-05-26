@@ -9,7 +9,7 @@ public class MellatBank extends CommercialBank {
 
     public void add_user(String userFName,String userLname){
         // compute count of zero that we want to creat account number.
-        String middleSpace = "";
+        String middleSpace = "";    
         for(int i = 0;i<12-String.valueOf(MellatBank.countOfBankUser).length();i++){
             middleSpace += "0";
         }

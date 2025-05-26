@@ -46,4 +46,11 @@ public class UsersOfBank implements ITransaction , IAccountManagement {
         System.out.println("----------------\n");
     }
 
+    public void user_info_dollar(int value){
+        Double value1 = Double.valueOf(value);
+        System.out.println("\n--------shooow_info(dollar)--------");
+        System.out.println("userName : "+this.userFName+" "+this.userLName+"\n"+"acount number : "+this.acountNumber+"\n"+"balance : "+this.balance/value1 +"$");
+        System.out.println("----------------\n");
+    }
+
 }
